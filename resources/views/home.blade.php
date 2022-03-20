@@ -1,6 +1,6 @@
 @extends('layouts/indexLayout')
-
-@section('homeContent')
+@section('title', 'Home')
+@section('content')
     <section id="home-slider">
         <div class="container">
             <div class="row">
