@@ -136,7 +136,9 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="contact-form bottom">
                         <h2>Send a message</h2>
-                        <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+
+                        <form id="contact-form" name="contact-form" method="post" action="{{ route('messages') }}">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" required="required" placeholder="Name">
                             </div>
@@ -144,7 +146,7 @@
                                 <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
                             </div>
                             <div class="form-group">
-                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                                <textarea name="body" id="body" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
                             </div>                        
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-submit" value="Submit">
@@ -154,8 +156,8 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
-                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
+                        <p>&copy; Personal Web. All Rights Reserved.</p>
+                        
                     </div>
                 </div>
             </div>
