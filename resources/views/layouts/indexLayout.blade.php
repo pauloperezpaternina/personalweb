@@ -26,6 +26,11 @@
 </head><!--/head-->
 
 <body>
+    @if(session()->has('flash'))
+        <div id="flash" class="alert alert-success" role="alert">
+            {{ session()->get('flash') }}
+        </div>
+    @endif
 	<header id="header">      
         <div class="container">
             <div class="row">
@@ -82,7 +87,7 @@
        
     </header>
     <!--/#header-->
-
+    
     @yield('content')
 
 
@@ -166,6 +171,14 @@
     <!--/#footer-->
 
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            setTimeout(function() {
+                $("#flash").fadeOut(2500);
+            },3000);
+         
+        });
+        </script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
